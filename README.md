@@ -32,6 +32,22 @@ Docker.
 - **docker-compose.yml** - builds and runs the app, mapping a host port to the
   container.
 
+## How it works
+
+When you open the site, FastAPI builds the whole page in `app.py` and sends it
+back as one HTML response. The product list lives in a small Python list, and
+each item's SVG drawing, name, description, and price are stitched into the page
+before it is sent. The status badge is decided on the server too: it reads the
+price value and shows green when everything looks right.
+
+Once the page is in your browser, the cart takes over in plain JavaScript. Adding
+an item updates an in-memory list, bumps the count on the cart icon, and refreshes
+the slide-out panel and total. Nothing is saved between refreshes and no data is
+sent back to the server, so the cart is a self-contained demo.
+
+Separately, the `/health` endpoint returns a small piece of JSON so tools like the
+CI workflow can check that the app is up and responding.
+
 ## Running it
 
 You need Docker installed. From this folder, run:
