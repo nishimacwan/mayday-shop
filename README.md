@@ -5,6 +5,18 @@ serves a self-contained web shop: a small catalog of home goods with drawn SVG
 visuals, a working in-page cart, and a health check endpoint. Everything runs in
 Docker.
 
+## Features
+
+- A calm, responsive storefront with a muted palette and one restrained accent color.
+- A catalog of six home goods, each with a drawn SVG visual, a name, a short description, and a price.
+- Product visuals drawn with inline SVG and CSS, so there are no external image files.
+- A working cart built with in-page JavaScript: add items, adjust quantities, and see a live count on the cart icon.
+- A slide-out cart panel that lists your items with prices, a running total, item removal, and a close button.
+- A top nav bar with the store name, a visual sign-in link, and the cart.
+- A system status badge that turns green when the app is healthy.
+- A `/health` endpoint that returns `{"status": "ok"}` for simple uptime checks.
+- Fully self-contained in a single `app.py`, ready to build and run with Docker.
+
 ## What is inside
 
 - **app.py** - the FastAPI app. The homepage HTML, styles, product data, and
