@@ -1,5 +1,10 @@
 # MAYDAY Store
 
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-6b8f81)
+
 A tiny demo storefront built for a hackathon. It is a single FastAPI app that
 serves a self-contained web shop: a small catalog of home goods with drawn SVG
 visuals, a working in-page cart, and a health check endpoint. Everything runs in
