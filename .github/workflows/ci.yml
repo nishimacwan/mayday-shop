@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-smoke-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Build the Docker image
+        run: docker build -t mayday-shop .
+
+      - name: Start the container
+        run: docker run -d -p 8000:8000 --name mayday mayday-shop
+
+      - name: Wait for the app and check /health
+        run: |
+          for i in $(seq 1 30); do
+            if curl -sf http://localhost:8000/health; then
+              echo "App is healthy."
+              exit 0
+            fi
+            echo "Waiting for the app to start..."
+            sleep 2
+          done
+          echo "The app did not become healthy in time."
+          docker logs mayday
+          exit 1
+
+      - name: Stop the container
+        if: always()
+        run: docker rm -f mayday

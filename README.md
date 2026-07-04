@@ -1,5 +1,6 @@
 # MAYDAY Store
 
+[![CI](https://github.com/nishimacwan/mayday-shop/actions/workflows/ci.yml/badge.svg)](https://github.com/nishimacwan/mayday-shop/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=white)
